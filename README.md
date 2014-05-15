@@ -14,7 +14,7 @@ Clone the project from github.
 
 ## How to use it?
 
-With your API KEY, load...:
+With your [API key](http://developer.marvel.com), load..:
 
 ```python
 from marvel import Marvel
@@ -28,22 +28,26 @@ m = Marvel.start(public_key, private_key)
 and shoot:
 
 ```python
-# list of characters
+# list of heroes
 characters = m.find_character()
-# list of characters whose names start with
+# list of heroes whose names start with
 characters = m.find_character('Spid')
-# or one character
+# or one heroe
 character = m.find_character('Spider-Man')
 ```
 then, get some data about
 ```python
-while characters.hasNext(): # every api call 20 to 20
+# every API call is from 20 to 20
+while characters.hasNext():
 	for c in characters.itemlist:
-		print c.name # name
-		print c.description # short description about
-		c.save_images() # get images from each Marvel character
+		# heroe name
+		print c.name
+		# heroe short description
+		print c.description
+		# get images from each Marvel heroe
+		c.save_images()
 ```
-if you find one character...
+if you get only one heroe...
 ```python
 print character.name
 ...
